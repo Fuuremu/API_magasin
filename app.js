@@ -107,7 +107,7 @@ app.post('/api/produits', (req, res, next) => {
         }))
 });
 
-app.post('/api/categorie', (req, res, next) => {
+app.post('/api/categories', (req, res, next) => {
     const categorie = new Categorie({
         ...req.body
     });
