@@ -51,36 +51,37 @@ app.post('/articles', (req, res, next) => {
 
 //GET /api
 // Afficher une catégorie avec son ID
-/*app.get('/api/categories/:catId/produits', (req, res, next) => {
+app.get('/api/categories/:catId/produits', (req, res, next) => {
     Produit.find({
-            _id: req.params.catId
+        categorieId: req.params.catId
         })
         .then(produits =>
             res.status(200).json(produits))
         .catch(error => res.status(400).json({
             error
         }));
+});
+/*app.get('/api/categories/:catId/produits', (req, res, next) => {
+    Categorie.findOne({
+            _id: req.params.catId
+        })
+        .then(categories =>
+            res.status(200).json(categories))
+        .catch(error => res.status(400).json({
+            error
+        }));
 });*/
-app.get('/api/categories/:catId/produits', (req, res, next) => {     
-    Categorie.findOne({             
-        _id: req.params.catId         
-    })         
-    .then(categories =>             
-    res.status(200).json(categories))         
-    .catch(error => res.status(400).json({             
-        error         
-    }));  });
 app.get('/api/produits/:id', (req, res, next) => {
-    
+
     Produit.find({
-        _id: req.params.id
-    })
-    .then(produit =>
-        res.status(200).json(produit))
-    .catch(error => res.status(400).json({
-        error
-    }));
-    
+            _id: req.params.id
+        })
+        .then(produit =>
+            res.status(200).json(produit))
+        .catch(error => res.status(400).json({
+            error
+        }));
+
 });
 
 app.get('/api/produits', (req, res, next) => {
